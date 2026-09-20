@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Synnox — Profil &amp; Links</title>
-<meta name="description" content="Profil de Synnox : liens vers ses serveurs Discord, chaînes YouTube, TikTok et GitHub, avec activité Discord en direct et ambiances musicales.">
+<meta name="description" content="Profil de Synnox : liens vers ses serveurs Discord, chaînes YouTube, TikTok et GitHub, avec activité Discord en direct et une musique lofi de fond.">
 <meta name="author" content="synnox">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#080812">
-<link rel="icon" href="https://cdn.discordapp.com/avatars/1400424463849226260/4a4ff7f4949cd60778b7b0db12ccb11a.png" type="image/png">
-<link rel="canonical" href="https://networkxsynnox.netlify.app/">
+<link rel="icon" href="./assets/img/avatar.png" type="image/png">
+<link rel="canonical" href="https://synnox.github.io/sn/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Synnox — Profil &amp; Links">
 <meta property="og:description" content="Serveurs Discord, YouTube, TikTok, GitHub et activité Discord en direct.">
-<meta property="og:image" content="https://cdn.discordapp.com/avatars/1400424463849226260/4a4ff7f4949cd60778b7b0db12ccb11a.png">
-<meta property="og:url" content="https://networkxsynnox.netlify.app/">
+<meta property="og:image" content="https://synnox.github.io/sn/assets/img/avatar.png">
+<meta property="og:url" content="https://synnox.github.io/sn/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Synnox — Profil &amp; Links">
 <meta name="twitter:description" content="Serveurs Discord, YouTube, TikTok, GitHub et activité Discord en direct.">
@@ -27,749 +27,71 @@
 
 <link rel="stylesheet" href="./assets/css/all.min.css">
 <link href="./assets/css/css2.css" rel="stylesheet">
-<style>
-:root {
-  --accent: #5865f2;
-  --accent2: #eb459e;
-  --green: #3ba55d;
-  --gold: #faa61a;
-  --text: #f0f0f5;
-  --muted: #7a7a8a;
-  --dim: #444458;
-  --surface: rgba(8,8,18,0.68);
-  --surface2: rgba(255,255,255,0.04);
-  --border: rgba(255,255,255,0.07);
-  --border-hov: rgba(255,255,255,0.16);
-  --r: 22px;
-  --r2: 14px;
-  --r3: 10px;
-  --ease: cubic-bezier(.25,.46,.45,.94);
-  --t: all .22s var(--ease);
-  --knife: url("./assets/cursor/cursor.png") 3 3, auto;
-}
+<link rel="stylesheet" href="./assets/css/style.css">
 
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-/* curseur personnalisé : couteau (remplace la flèche) */
-*,*::before,*::after{cursor:var(--knife) !important;}
-
-/* AURORA FALLBACK BG */
-body::before{
-  content:'';position:fixed;inset:0;z-index:-1;
-  background:
-    radial-gradient(42% 42% at 18% 18%, rgba(88,101,242,.28), transparent 60%),
-    radial-gradient(40% 40% at 82% 26%, rgba(235,69,158,.20), transparent 62%),
-    radial-gradient(55% 55% at 50% 96%, rgba(59,165,93,.12), transparent 60%),
-    #05050c;
-}
-
-body {
-  font-family:'Inter',system-ui,sans-serif;
-  color:var(--text);
-  min-height:100vh;
-  display:flex;
-  overflow-x:hidden;
-  background:#05050c;
-  padding:24px;
-  perspective:1200px;
-  -webkit-font-smoothing:antialiased;
-}
-
-/* VIDEO BG */
-#vid-bg {
-  position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
-}
-#vid-bg video {
-  position:absolute;top:50%;left:50%;
-  min-width:100vw;min-height:100vh;
-  width:177.78vh;
-  transform:translate(-50%,-50%);
-  object-fit:cover;
-}
-#vid-bg::after {
-  content:'';position:absolute;inset:0;
-  background:rgba(0,0,0,0.5);
-  backdrop-filter:blur(0.8px);
-}
-.no-video #vid-bg{display:none;}
-/* AMNÉSIE = fond noir plein écran + effets */
-body.amnesie-mode,
-body.amnesie-mode #vid-bg{background:#000;}
-body.amnesie-mode #vid-bg video{display:none;}
-/* RAIN FX (Amnésie) */
-.rain-fx{position:absolute;inset:0;pointer-events:none;overflow:hidden;display:none;z-index:2;}
-.rain-fx.active{display:block;}
-.rain-fx::before,.rain-fx::after{content:'';position:absolute;inset:0;}
-.rain-fx::before{
-  background-image:repeating-linear-gradient(0deg, rgba(190,210,240,0) 0 5px, rgba(190,210,240,.35) 5px 6px, rgba(190,210,240,0) 6px 12px);
-  background-size:12px 100%;
-  animation:rainFall .5s linear infinite;
-}
-.rain-fx::after{
-  background-image:repeating-linear-gradient(0deg, rgba(190,210,240,0) 0 8px, rgba(190,210,240,.2) 8px 9px, rgba(190,210,240,0) 9px 18px);
-  background-size:18px 100%;
-  opacity:.6;
-  animation:rainFall .8s linear infinite;
-}
-@keyframes rainFall{from{background-position:0 0}to{background-position:0 360px}}
-
-/* MOOD FX (Amnésie) — mots mélancoliques flottants */
-.mood-fx{position:absolute;inset:0;pointer-events:none;z-index:3;display:none;overflow:hidden;}
-body.amnesie-mode .mood-fx{display:block;}
-.mood-fx span{
-  position:absolute;top:110%;left:var(--x);
-  font-family:var(--font-disp);font-size:clamp(14px,2vw,22px);
-  letter-spacing:.12em;color:rgba(150,170,210,.16);
-  text-transform:lowercase;white-space:nowrap;
-  animation:moodFloat 14s linear infinite;animation-delay:var(--d);
-}
-@keyframes moodFloat{
-  0%{transform:translateY(0) translateX(-50%);opacity:0;}
-  10%{opacity:.45;}
-  85%{opacity:.45;}
-  100%{transform:translateY(-120vh) translateX(-50%);opacity:0;}
-}
-.mood-fx span{font-size:clamp(12px,1.5vw,18px);letter-spacing:.04em;}
-
-/* PARTICULES MONTANTES (Amnésie) */
-.particles-fx{position:absolute;inset:0;pointer-events:none;z-index:2;display:none;overflow:hidden;}
-body.amnesie-mode .particles-fx{display:block;}
-.particles-fx span{
-  position:absolute;bottom:-12px;left:var(--x);width:var(--s);height:var(--s);border-radius:50%;
-  background:radial-gradient(circle,rgba(190,205,245,.9),rgba(190,205,245,0) 70%);
-  box-shadow:0 0 7px rgba(160,190,255,.6);
-  animation:rise var(--t) linear infinite;animation-delay:var(--d);opacity:0;
-}
-@keyframes rise{
-  0%{transform:translateY(0);opacity:0;}
-  12%{opacity:.85;}
-  88%{opacity:.85;}
-  100%{transform:translateY(-115vh);opacity:0;}
-}
-
-/* GRAIN / FILM VINTAGE (Amnésie) — couvre toute l'interface */
-.grain-fx{
-  position:fixed;inset:0;pointer-events:none;z-index:150;display:none;opacity:.08;
-  mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size:180px 180px;
-  animation:grainShift .6s steps(3) infinite;
-}
-body.amnesie-mode .grain-fx{display:block;}
-@keyframes grainShift{
-  0%{background-position:0 0;}
-  33%{background-position:-30px 20px;}
-  66%{background-position:25px -25px;}
-  100%{background-position:0 0;}
-}
-
-/* INFO AMNÉSIE (top-right) */
-.amnesie-info-btn{
-  position:fixed;top:14px;right:14px;z-index:160;
-  font-family:var(--font);font-size:11px;color:#cfd6e6;
-  background:rgba(20,20,30,.7);border:1px solid rgba(255,255,255,.12);
-  padding:7px 11px;border-radius:10px;cursor:pointer;backdrop-filter:blur(6px);
-  transition:var(--t);
-}
-.amnesie-info-btn:hover{background:rgba(34,34,50,.88);color:#fff;}
-.amnesie-info-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-.amnesie-info-box{
-  position:fixed;top:52px;right:14px;z-index:160;width:min(300px,calc(100vw - 28px));
-  background:rgba(14,14,22,.96);border:1px solid rgba(255,255,255,.14);border-radius:14px;
-  padding:16px 16px 14px;color:#c7cdda;font-size:12px;line-height:1.55;
-  box-shadow:0 12px 40px rgba(0,0,0,.55);backdrop-filter:blur(10px);
-  animation:mIn .2s ease forwards;
-}
-.amnesie-info-box[hidden]{display:none;}
-.amnesie-info-box p{margin:0 0 9px;}
-.amnesie-info-box .amnesie-stats{
-  margin:0 0 9px;padding-top:9px;border-top:1px solid rgba(255,255,255,.1);
-  font-size:11px;color:#aeb6c6;line-height:1.5;
-}
-.amnesie-info-box .amnesie-stats strong{color:#e6e9f0;}
-.amnesie-info-box .amnesie-help{margin:0;font-size:11px;color:#9aa3b5;}
-.amnesie-info-box .amnesie-help strong{color:#f1a3b4;}
-.amnesie-info-close{
-  position:absolute;top:6px;right:9px;background:none;border:none;
-  color:#9aa3b5;font-size:18px;line-height:1;cursor:pointer;padding:2px 4px;
-}
-.amnesie-info-close:hover{color:#fff;}
-
-/* AMBIANCE GRISE + FL OU + GLITCH TITRE (Amnésie) — interface quasi N&B, quelques couleurs */
-body.amnesie-mode{filter:none;}
-body.amnesie-mode .card{filter:blur(.35px);}
-body.amnesie-mode .profile > .avatar-wrap,
-body.amnesie-mode .profile > .tag,
-body.amnesie-mode .profile > .bio,
-body.amnesie-mode .profile > .badges,
-body.amnesie-mode .activity,
-body.amnesie-mode .tabs,
-body.amnesie-mode .panels,
-body.amnesie-mode .music-launch,
-body.amnesie-mode .footer,
-body.amnesie-mode .music-widget,
-body.amnesie-mode .music-fab{
-  filter:grayscale(.8) contrast(1.03) brightness(.97);
-}
-body.amnesie-mode #vid-bg::after{background:radial-gradient(circle at 50% 40%,rgba(0,0,0,0) 25%,rgba(0,0,0,.65) 100%);}
-body.amnesie-mode .username{position:relative;animation:glitch 3.2s infinite;}
-@keyframes glitch{
-  0%,90%,100%{text-shadow:none;transform:translate(0,0);}
-  91%{text-shadow:-2px 0 #ff2d55,2px 0 #00e5ff;transform:translate(1px,0);}
-  92%{text-shadow:2px 0 #ff2d55,-2px 0 #00e5ff;transform:translate(-1px,0);}
-  93%{text-shadow:none;transform:translate(0,0);}
-  94%{text-shadow:-1px 0 #ff2d55,1px 0 #00e5ff;transform:translate(1px,0);}
-  95%{text-shadow:none;transform:translate(0,0);}
-}
-
-/* MODAL */
-#musicModal {
-  position:fixed;inset:0;z-index:200;
-  display:flex;align-items:center;justify-content:center;
-  background:rgba(0,0,0,0.72);
-  backdrop-filter:blur(14px);
-  animation:mIn .3s ease forwards;
-  padding:20px;
-}
-@keyframes mIn{from{opacity:0}to{opacity:1}}
-
-.modal-box {
-  background:rgba(11,11,20,0.95);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:24px;
-  padding:38px 30px 30px;
-  text-align:center;
-  max-width:340px;width:100%;
-  box-shadow:0 24px 80px rgba(0,0,0,.8);
-  animation:mUp .38s cubic-bezier(.34,1.56,.64,1) forwards;
-}
-@keyframes mUp{from{transform:translateY(22px) scale(.97);opacity:0}to{transform:none;opacity:1}}
-
-.modal-icon {
-  width:56px;height:56px;border-radius:16px;
-  background:linear-gradient(135deg,rgba(88,101,242,.3),rgba(235,69,158,.2));
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;margin:0 auto 18px;
-  border:1px solid rgba(255,255,255,.08);
-}
-.modal-box h2 {
-  font-size:17px;font-weight:800;letter-spacing:-.3px;
-  margin-bottom:5px;color:#fff;
-}
-.modal-box p {
-  font-size:12.5px;color:var(--muted);margin-bottom:24px;line-height:1.6;
-}
-.modal-choices{display:flex;flex-direction:column;gap:8px;}
-
-.modal-btn {
-  display:flex;align-items:center;gap:12px;
-  padding:12px 14px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,0.07);
-  background:rgba(255,255,255,0.04);
-  color:#fff;font-family:'Inter',sans-serif;font-weight:600;
-  cursor:pointer;transition:var(--t);text-align:left;
-  position:relative;overflow:hidden;
-}
-.modal-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-.modal-btn::before {
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.04),transparent);
-  transform:translateX(-100%);transition:transform .5s ease;
-}
-.modal-btn:hover::before{transform:translateX(100%);}
-.modal-btn:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.14);transform:translateY(-1px);}
-.modal-btn:active{transform:translateY(0);}
-
-.btn-ico {
-  width:36px;height:36px;border-radius:10px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:15px;flex-shrink:0;
-}
-.btn-lbl{flex:1;min-width:0;}
-.btn-title{font-size:13px;font-weight:700;margin-bottom:2px;}
-.btn-sub{font-size:11px;color:var(--dim);font-weight:400;}
-.btn-chevron{font-size:9px;color:var(--dim);}
-
-.b-damso .btn-ico{background:rgba(88,101,242,.18);color:#7983f5;}
-.b-bg    .btn-ico{background:rgba(255,255,255,.06);color:#aaa;}
-.b-none  .btn-ico{background:rgba(255,255,255,.03);color:#444;}
-.b-none{opacity:.65;}.b-none:hover{opacity:1;}
-
-.modal-skip{
-  margin-top:14px;font-size:11px;color:var(--dim);
-  background:none;border:none;cursor:pointer;font-family:inherit;
-  text-decoration:underline;text-underline-offset:3px;
-}
-.modal-skip:hover{color:var(--muted);}
-
-/* MUSIC WIDGET */
-.music-widget {
-  position:fixed;top:16px;left:16px;z-index:50;
-  background:rgba(8,8,18,0.82);
-  border:1px solid var(--border);
-  border-radius:16px;
-  backdrop-filter:blur(28px);
-  overflow:hidden;
-  transition:border-color .2s ease, box-shadow .2s ease;
-  width:208px;
-}
-.music-widget:hover{border-color:var(--border-hov);box-shadow:0 4px 24px rgba(0,0,0,.4);}
-
-.mw-header{
-  display:flex;align-items:center;gap:10px;
-  padding:11px 12px 8px;
-  position:relative;
-}
-.mw-play {
-  width:30px;height:30px;border-radius:50%;border:none;flex-shrink:0;
-  background:rgba(88,101,242,.2);color:#7983f5;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;
-  font-size:10px;transition:var(--t);
-}
-.mw-play:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-.mw-play:hover{background:rgba(88,101,242,.4);transform:scale(1.08);}
-.mw-play:active{transform:scale(.95);}
-.mw-info{flex:1;min-width:0;cursor:pointer;}
-.mw-title{font-size:11px;font-weight:700;color:rgba(255,255,255,.9);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.mw-artist{font-size:9.5px;color:var(--dim);margin-top:1px;}
-.mw-change{
-  width:26px;height:26px;border-radius:8px;flex-shrink:0;
-  background:rgba(255,255,255,.04);border:1px solid var(--border);
-  color:var(--muted);cursor:pointer;font-size:10px;
-  display:flex;align-items:center;justify-content:center;transition:var(--t);
-}
-.mw-change:hover{background:rgba(255,255,255,.08);color:#fff;}
-.mw-change:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-
-.mw-bars{
-  display:flex;align-items:flex-end;gap:2.5px;
-  height:16px;padding:0 12px 10px;
-}
-.mw-bar{
-  flex:1;border-radius:2px;
-  background:linear-gradient(to top,#5865f2,#a78bfa);
-  animation:bDance .75s ease-in-out infinite;
-  transform-origin:bottom;
-}
-.mw-bar:nth-child(1){animation-duration:.65s;}
-.mw-bar:nth-child(2){animation-duration:.85s;animation-delay:.08s;}
-.mw-bar:nth-child(3){animation-duration:.6s;animation-delay:.18s;}
-.mw-bar:nth-child(4){animation-duration:.9s;animation-delay:.12s;}
-.mw-bar:nth-child(5){animation-duration:.7s;animation-delay:.04s;}
-.mw-bar:nth-child(6){animation-duration:.8s;animation-delay:.22s;}
-.mw-bar:nth-child(7){animation-duration:.55s;animation-delay:.28s;}
-@keyframes bDance{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.18)}}
-.mw-bars.paused .mw-bar{animation-play-state:paused;}
-
-.mw-vol{
-  display:flex;align-items:center;gap:7px;
-  padding:0 12px 11px;
-}
-.mw-vol i{font-size:9px;color:var(--dim);}
-.mw-vol input[type=range]{
-  -webkit-appearance:none;appearance:none;
-  flex:1;height:3px;border-radius:3px;
-  background:rgba(255,255,255,.1);outline:none;cursor:pointer;
-}
-.mw-vol input[type=range]::-webkit-slider-thumb{
-  -webkit-appearance:none;width:11px;height:11px;border-radius:50%;
-  background:#5865f2;cursor:pointer;transition:transform .18s;
-  box-shadow:0 0 6px rgba(88,101,242,.5);
-}
-.mw-vol input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.3);}
-.mw-vol input[type=range]::-moz-range-thumb{
-  width:11px;height:11px;border:none;border-radius:50%;
-  background:#5865f2;cursor:pointer;
-}
-
-/* FAB */
-.music-fab{
-  position:fixed;bottom:18px;right:18px;z-index:50;
-  width:48px;height:48px;border-radius:50%;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  border:none;color:#fff;font-size:16px;cursor:pointer;
-  display:none;align-items:center;justify-content:center;
-  box-shadow:0 8px 28px rgba(88,101,242,.45);
-  transition:transform .2s var(--ease), box-shadow .2s;
-}
-.music-fab:hover{transform:scale(1.08);box-shadow:0 10px 34px rgba(88,101,242,.6);}
-.music-fab:active{transform:scale(.94);}
-.music-fab:focus-visible{outline:2px solid #fff;outline-offset:2px;}
-
-/* CARD */
-.container {
-  position:relative;z-index:10;
-  width:100%;max-width:390px;margin:auto;
-  padding:30px 20px 22px;
-  display:flex;flex-direction:column;align-items:center;
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--r);
-  backdrop-filter:blur(32px);
-  -webkit-backdrop-filter:blur(32px);
-  box-shadow:0 8px 60px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.04) inset;
-  transform-style:preserve-3d;
-  will-change:transform;
-  transition:box-shadow .4s ease, border-color .3s ease;
-}
-.container:hover{border-color:rgba(255,255,255,.12);}
-
-.container::before {
-  content:'';position:absolute;inset:0;border-radius:var(--r);
-  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(88,101,242,.08),transparent 70%);
-  opacity:0;transition:opacity .4s ease;pointer-events:none;
-}
-.container:hover::before{opacity:1;}
-
-/* PROFILE */
-.profile{display:flex;flex-direction:column;align-items:center;margin-bottom:18px;text-align:center;width:100%;}
-
-.avatar-wrap{position:relative;width:100px;height:100px;margin-bottom:14px;}
-
-.avatar-ring{
-  position:absolute;inset:-3px;border-radius:50%;
-  background:conic-gradient(from 0deg,#5865f2,#eb459e,#faa61a,#5865f2);
-  animation:ringSpin 4s linear infinite;
-  opacity:.8;
-}
-@keyframes ringSpin{to{transform:rotate(360deg)}}
-.avatar-ring-inner{position:absolute;inset:3px;background:#080812;border-radius:50%;}
-.avatar{
-  width:100%;height:100%;border-radius:50%;object-fit:cover;
-  position:relative;z-index:1;display:block;background:#0d0d1a;
-  transition:filter .3s ease;
-}
-.avatar-wrap:hover .avatar{filter:brightness(1.06);}
-
-.status-dot{
-  position:absolute;bottom:3px;right:3px;
-  width:15px;height:15px;border-radius:50%;
-  border:2.5px solid #080812;z-index:2;
-  transition:var(--t);
-}
-.status-dot.online {background:var(--green);box-shadow:0 0 6px rgba(59,165,93,.6);}
-.status-dot.idle   {background:var(--gold);}
-.status-dot.dnd    {background:#f04747;}
-.status-dot.offline{background:#2e2e40;}
-
-.username{font-size:22px;font-weight:900;letter-spacing:-.5px;color:#fff;margin-bottom:1px;}
-.tag{color:var(--dim);font-size:11.5px;font-weight:500;margin-bottom:9px;letter-spacing:.1px;}
-.bio{font-size:12.5px;color:var(--muted);line-height:1.75;max-width:290px;}
-
-.badges{display:flex;align-items:center;gap:6px;margin-top:10px;flex-wrap:wrap;justify-content:center;}
-.badge{
-  display:inline-flex;align-items:center;gap:5px;
-  padding:3px 9px;border-radius:20px;
-  font-size:10.5px;font-weight:600;
-  border:1px solid rgba(255,255,255,.07);
-  background:rgba(255,255,255,.04);
-  color:var(--muted);
-}
-
-.divider{width:100%;height:1px;margin:6px 0 16px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.07),transparent);}
-
-/* ACTIVITY */
-.activity{
-  width:100%;background:var(--surface2);border:1px solid var(--border);
-  border-radius:var(--r2);padding:12px 14px;margin-bottom:10px;
-  min-height:60px;display:flex;flex-direction:column;justify-content:center;transition:var(--t);
-}
-.activity:hover{border-color:var(--border-hov);background:rgba(255,255,255,.06);}
-.act-header{display:flex;align-items:center;gap:6px;margin-bottom:8px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--dim);}
-.act-header i{font-size:9px;color:var(--accent);}
-.act-body{display:flex;align-items:center;gap:10px;}
-.act-icon{width:46px;height:46px;border-radius:9px;flex-shrink:0;object-fit:cover;background:#0d0d1a;}
-.act-info{flex:1;min-width:0;}
-.act-name{font-weight:700;font-size:13px;color:#fff;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.act-state{font-size:11.5px;color:#aaa;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.act-detail{font-size:10.5px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.act-time{font-size:10px;color:#3a3a5a;margin-top:3px;}
-.no-act{display:flex;align-items:center;gap:8px;color:#3a3a5a;font-size:12px;}
-.sp-bar{margin-top:7px;}
-.sp-progress{width:100%;height:2px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden;}
-.sp-fill{height:100%;background:linear-gradient(90deg,#1db954,#1ed760);border-radius:3px;width:0%;transition:width 1s linear;}
-
-/* LINKS */
-.links{display:flex;flex-direction:column;gap:6px;width:100%;margin-bottom:10px;}
-
-.link {
-  display:flex;align-items:center;gap:12px;
-  padding:11px 14px;
-  background:var(--surface2);
-  border:1px solid var(--border);
-  border-radius:var(--r2);
-  text-decoration:none;color:#fff;
-  transition:var(--t);
-  position:relative;overflow:hidden;
-}
-.link:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-.link::after {
-  content:'';position:absolute;
-  top:0;left:-100%;width:60%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);
-  transform:skewX(-15deg);
-  transition:left .55s ease;
-}
-.link:hover::after{left:160%;}
-.link:hover{border-color:var(--border-hov);background:rgba(255,255,255,.065);transform:translateX(2px);}
-.link:active{transform:translateX(0);opacity:.85;}
-
-.link-icon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
-.link-info{flex:1;min-width:0;}
-.link-title{font-weight:700;font-size:13px;margin-bottom:1px;}
-.link-sub{font-size:11px;color:var(--dim);}
-.link-arrow{color:var(--dim);font-size:9px;transition:transform .2s ease, color .2s ease;}
-.link:hover .link-arrow{color:rgba(255,255,255,.35);transform:translateX(3px);}
-
-.i-discord {background:rgba(88,101,242,.16);color:#7983f5;}
-.i-github  {background:rgba(200,200,200,.08);color:#bbb;}
-.i-youtube {background:rgba(255,55,55,.12);color:#ff4545;}
-.i-tiktok  {background:rgba(255,255,255,.07);color:#ddd;}
-.i-twitch  {background:rgba(145,70,255,.14);color:#9146ff;}
-.i-spotify {background:rgba(29,185,84,.12);color:#1db954;}
-
-/* GUIDE */
-.guide{width:100%;background:rgba(88,101,242,.05);border:1px solid rgba(88,101,242,.13);border-radius:12px;padding:12px 14px;margin-bottom:10px;font-size:12px;color:#888;line-height:1.8;}
-.guide strong{color:#bbb;}.guide a{color:var(--accent);text-decoration:none;}
-
-/* SKELETON */
-.skel{display:flex;align-items:center;gap:10px;}
-.skel-pulse{background:linear-gradient(90deg,rgba(255,255,255,.03) 0%,rgba(255,255,255,.07) 50%,rgba(255,255,255,.03) 100%);background-size:200% 100%;animation:skel 1.8s ease-in-out infinite;border-radius:8px;}
-.skel-icon{width:46px;height:46px;border-radius:9px;}
-.skel-text{flex:1;height:34px;}
-@keyframes skel{0%{background-position:200% 0}100%{background-position:-200% 0}}
-
-/* LAUNCH BTN */
-.music-launch {
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  width:100%;padding:11px 20px;margin-top:2px;
-  border:1px solid var(--border);border-radius:var(--r2);
-  background:var(--surface2);
-  color:var(--text);font-family:'Inter',sans-serif;font-size:13px;font-weight:600;
-  cursor:pointer;transition:var(--t);
-}
-.music-launch:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-.music-launch:hover{background:rgba(255,255,255,.07);border-color:var(--border-hov);}
-.music-launch i{font-size:11px;color:var(--accent);}
-.music-launch.playing i{color:#a78bfa;}
-
-/* FADE IN */
-.fade{opacity:0;transform:translateY(12px);animation:fIn .42s var(--ease) forwards;}
-.fade:nth-child(1){animation-delay:.05s}.fade:nth-child(2){animation-delay:.11s}
-.fade:nth-child(3){animation-delay:.18s}.fade:nth-child(4){animation-delay:.25s}
-.fade:nth-child(5){animation-delay:.32s}.fade:nth-child(6){animation-delay:.39s}
-.fade:nth-child(7){animation-delay:.46s}
-@keyframes fIn{to{opacity:1;transform:translateY(0)}}
-
-/* FOOTER */
-.footer{text-align:center;padding:13px 0 0;font-size:11px;color:var(--dim);width:100%;}
-.footer a{color:var(--dim);text-decoration:none;transition:color .2s;}
-.footer a:hover{color:var(--muted);}
-
-/* TABS */
-.tabs{
-  display:flex;gap:4px;width:100%;
-  background:rgba(255,255,255,.04);
-  border:1px solid var(--border);
-  border-radius:12px;padding:4px;margin-bottom:12px;
-}
-.tab{
-  flex:1;padding:8px 4px;border:none;background:transparent;
-  color:var(--muted);font-family:inherit;font-size:12px;font-weight:700;
-  border-radius:9px;cursor:pointer;transition:var(--t);
-}
-.tab:hover{color:#fff;}
-.tab.active{
-  background:linear-gradient(135deg,rgba(88,101,242,.35),rgba(235,69,158,.22));
-  color:#fff;box-shadow:0 2px 10px rgba(88,101,242,.25);
-}
-.tab:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-
-.panels{width:100%;}
-.panel{display:none;}
-.panel.active{display:flex;flex-direction:column;}
-
-/* DEV */
-.dev-bio{
-  font-size:12.5px;color:var(--muted);line-height:1.7;
-  margin-bottom:12px;text-align:left;
-}
-.dev-bio strong{color:#cfcfe0;font-weight:700;}
-.dev-repos{display:flex;flex-direction:column;gap:6px;width:100%;margin-bottom:10px;}
-.repo{
-  display:flex;flex-direction:column;gap:5px;
-  padding:11px 14px;background:var(--surface2);
-  border:1px solid var(--border);border-radius:var(--r2);
-  text-decoration:none;color:#fff;transition:var(--t);
-}
-.repo:hover{border-color:var(--border-hov);background:rgba(255,255,255,.065);transform:translateX(2px);}
-.repo:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-.repo-top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
-.repo-name{font-weight:700;font-size:13px;display:flex;align-items:center;gap:7px;min-width:0;}
-.repo-name span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.repo-stars{font-size:10.5px;color:var(--dim);display:flex;align-items:center;gap:4px;flex-shrink:0;}
-.repo-desc{font-size:11px;color:var(--muted);line-height:1.5;}
-.repo-lang{font-size:10.5px;color:var(--dim);display:flex;align-items:center;gap:5px;}
-.repo-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-
-/* POWERLIFTING */
-.pl-empty{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;gap:8px;padding:34px 16px;
-  background:var(--surface2);border:1px dashed var(--border);border-radius:var(--r2);
-}
-.pl-ico{
-  width:48px;height:48px;border-radius:14px;
-  display:flex;align-items:center;justify-content:center;font-size:20px;
-  background:rgba(59,165,93,.14);color:#3ba55d;
-}
-.pl-title{font-size:14px;font-weight:800;color:#fff;}
-.pl-sub{font-size:11.5px;color:var(--dim);}
-
-.pl-content{display:flex;flex-direction:column;gap:14px;width:100%;text-align:left;}
-.pl-head{display:flex;align-items:center;gap:12px;}
-.pl-name{font-size:15px;font-weight:800;color:#fff;}
-.pl-tag{font-size:11px;color:var(--muted);margin-top:1px;}
-.pl-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
-.pl-stat{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r2);padding:12px 6px;text-align:center;transition:var(--t);}
-.pl-stat:hover{border-color:var(--border-hov);}
-.pl-stat-val{font-size:18px;font-weight:900;color:#fff;letter-spacing:-.5px;}
-.pl-stat-val span{font-size:10px;font-weight:700;color:var(--muted);margin-left:2px;}
-.pl-stat-label{font-size:9.5px;color:var(--dim);margin-top:5px;text-transform:uppercase;letter-spacing:.5px;}
-.pl-note{font-size:11.5px;color:var(--muted);line-height:1.6;}
-
-/* RESPONSIVE */
-@media (max-width:480px){
-  body{padding:16px 12px 56px;}
-  .container{padding:24px 16px 18px;}
-  .username{font-size:20px;}
-  .avatar-wrap{width:88px;height:88px;}
-  .music-widget{width:calc(100% - 24px);max-width:300px;}
-  .modal-box{padding:28px 20px 22px;}
-}
-@media (max-width:340px){
-  .bio{max-width:100%;}
-}
-
-/* REDUCED MOTION */
-@media (prefers-reduced-motion: reduce){
-  .avatar-ring,.mw-bar{animation:none!important;}
-  .link::after,.modal-btn::before{display:none;}
-  .fade{animation:none!important;opacity:1!important;transform:none!important;}
-  .container{transition:none;}
-  *{scroll-behavior:auto!important;}
-}
-</style>
 </head>
 <body>
 
-<!-- VIDEO BG -->
-<div id="vid-bg" aria-hidden="true">
-  <video id="bgVideo" autoplay muted loop playsinline preload="auto" tabindex="-1">
-    <source src="./assets/videos/xwti1a.mp4" type="video/mp4">
-    <source src="https://files.catbox.moe/xwti1a.mp4" type="video/mp4">
-  </video>
-  <div id="rainFx" class="rain-fx" aria-hidden="true"></div>
-  <div id="particlesFx" class="particles-fx" aria-hidden="true">
-    <span style="--x:6%;--s:4px;--t:11s;--d:0s"></span>
-    <span style="--x:16%;--s:6px;--t:14s;--d:3s"></span>
-    <span style="--x:27%;--s:3px;--t:9s;--d:6s"></span>
-    <span style="--x:38%;--s:5px;--t:13s;--d:1.5s"></span>
-    <span style="--x:49%;--s:7px;--t:16s;--d:5s"></span>
-    <span style="--x:58%;--s:3px;--t:10s;--d:8s"></span>
-    <span style="--x:67%;--s:5px;--t:12s;--d:2.5s"></span>
-    <span style="--x:76%;--s:6px;--t:15s;--d:4s"></span>
-    <span style="--x:84%;--s:4px;--t:11s;--d:7s"></span>
-    <span style="--x:92%;--s:5px;--t:13s;--d:9s"></span>
-    <span style="--x:12%;--s:4px;--t:10s;--d:10s"></span>
-    <span style="--x:44%;--s:3px;--t:9s;--d:11.5s"></span>
-    <span style="--x:71%;--s:6px;--t:14s;--d:12.5s"></span>
-  </div>
-  <div id="moodFx" class="mood-fx" aria-hidden="true">
-    <span style="--x:14%;--d:0s">j'oublie pour survivre</span>
-    <span style="--x:46%;--d:4s">le vide qu'on habite</span>
-    <span style="--x:72%;--d:8s">on guérit jamais vraiment</span>
+<!-- LEGAL MODALS -->
+<div id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalTitle" hidden>
+  <div class="modal-box">
+    <button class="modal-close" id="legalClose" type="button" aria-label="Fermer">×</button>
+    <h2 id="legalTitle"></h2>
+    <div id="legalContent" style="text-align:left;color:var(--muted);font-size:12px;line-height:1.6;max-height:300px;overflow-y:auto;"></div>
   </div>
 </div>
-<div id="grainFx" class="grain-fx" aria-hidden="true"></div>
 
-<!-- MODAL -->
-<div id="musicModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+<!-- MODE SELECTION MODAL -->
+<div id="modeModal" role="dialog" aria-modal="true" aria-labelledby="modeTitle" aria-describedby="modeDesc">
   <div class="modal-box">
-    <div class="modal-icon"><i class="fas fa-music" aria-hidden="true"></i></div>
-    <h2 id="modalTitle">Quelle ambiance ?</h2>
-    <p id="modalDesc">Choisis le son qui accompagne ta visite</p>
+    <div class="modal-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+    <h2 id="modeTitle">Bienvenue</h2>
+    <p id="modeDesc">Choisissez votre mode de visite</p>
     <div class="modal-choices">
 
-      <button class="modal-btn b-damso" id="chooseDamso" type="button">
-        <div class="btn-ico"><i class="fas fa-headphones" aria-hidden="true"></i></div>
+      <button class="modal-btn b-damso" id="chooseCommunaute" type="button">
+        <div class="btn-ico"><i class="fas fa-users" aria-hidden="true"></i></div>
         <div class="btn-lbl">
-          <div class="btn-title">Amnésie — Damso</div>
-          <div class="btn-sub">Son custom du profil</div>
+          <div class="btn-title">Communauté</div>
+          <div class="btn-sub">Mode complet avec réseaux sociaux</div>
         </div>
         <i class="fas fa-chevron-right btn-chevron" aria-hidden="true"></i>
       </button>
 
-      <button class="modal-btn b-bg" id="chooseBg" type="button">
-        <div class="btn-ico"><i class="fas fa-film" aria-hidden="true"></i></div>
+      <button class="modal-btn b-bg" id="chooseEntreprise" type="button">
+        <div class="btn-ico"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
         <div class="btn-lbl">
-          <div class="btn-title">Son de la vidéo</div>
-          <div class="btn-sub">Audio de l'arrière-plan</div>
-        </div>
-        <i class="fas fa-chevron-right btn-chevron" aria-hidden="true"></i>
-      </button>
-
-      <button class="modal-btn b-none" id="chooseNone" type="button">
-        <div class="btn-ico"><i class="fas fa-volume-xmark" aria-hidden="true"></i></div>
-        <div class="btn-lbl">
-          <div class="btn-title">Sans musique</div>
-          <div class="btn-sub">Mode silencieux</div>
+          <div class="btn-title">Entreprise</div>
+          <div class="btn-sub">Mode professionnel épuré</div>
         </div>
         <i class="fas fa-chevron-right btn-chevron" aria-hidden="true"></i>
       </button>
 
     </div>
-    <button class="modal-skip" id="modalSkip" type="button">Plus tard</button>
   </div>
 </div>
 
-<!-- MUSIC WIDGET -->
-<div class="music-widget" id="musicWidget" role="region" aria-label="Lecteur de musique" style="display:none">
-  <div class="mw-header">
-    <button class="mw-play" id="musicPlayBtn" type="button" aria-label="Lire ou mettre en pause"><i class="fas fa-play" id="musicIcon" aria-hidden="true"></i></button>
-    <div class="mw-info" id="mwInfo" role="button" tabindex="0" aria-label="Changer de musique">
-      <div class="mw-title" id="widgetTitle">Amnésie</div>
-      <div class="mw-artist" id="widgetArtist">Damso</div>
-    </div>
-    <button class="mw-change" id="musicChangeBtn" type="button" aria-label="Changer de musique"><i class="fas fa-ellipsis-v" aria-hidden="true"></i></button>
+<!-- LOFI PLAYER -->
+<div class="lofi-widget" id="lofiWidget" role="region" aria-label="Lecteur lofi">
+  <button class="lofi-play" id="lofiPlayBtn" type="button" aria-label="Lire ou mettre en pause le lofi"><i class="fas fa-play" id="lofiIcon" aria-hidden="true"></i></button>
+  <div class="lofi-info">
+    <div class="lofi-title">Lo-fi Chill</div>
+    <div class="lofi-artist">Musique de fond</div>
   </div>
-  <div class="mw-bars paused" id="musicBars" aria-hidden="true">
-    <div class="mw-bar"></div><div class="mw-bar"></div><div class="mw-bar"></div>
-    <div class="mw-bar"></div><div class="mw-bar"></div><div class="mw-bar"></div>
-    <div class="mw-bar"></div>
-  </div>
-  <div class="mw-vol" id="mwVol">
+  <div class="lofi-vol" id="lofiVol">
     <i class="fas fa-volume-low" aria-hidden="true"></i>
-    <input type="range" id="musicVolume" min="0" max="100" value="30" aria-label="Volume de la musique">
+    <input type="range" id="lofiVolume" min="0" max="100" value="30" aria-label="Volume du lofi">
     <i class="fas fa-volume-high" aria-hidden="true"></i>
   </div>
 </div>
 
-<!-- FAB -->
-<button class="music-fab" id="musicFab" type="button" aria-label="Activer la musique"><i class="fas fa-music" aria-hidden="true"></i></button>
+<audio id="lofiAudio" loop preload="auto"></audio>
 
-<audio id="audioPlayer" preload="auto" loop></audio>
-
-<!-- AMNÉSIE INFO (top-right) -->
-<button class="amnesie-info-btn" id="amnesieInfoBtn" type="button" aria-expanded="false" aria-controls="amnesieInfoBox">
-  En savoir plus sur <strong>Amnésie</strong>
+<!-- MODE SWITCHER (top-left) -->
+<button class="mode-switch-btn" id="modeSwitchBtn" type="button" aria-label="Changer de mode">
+  <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+  <span id="modeSwitchText">Changer de mode</span>
 </button>
-<div class="amnesie-info-box" id="amnesieInfoBox" role="dialog" aria-label="À propos de la musique Amnésie" hidden>
-  <button class="amnesie-info-close" id="amnesieInfoClose" type="button" aria-label="Fermer">×</button>
-  <p>« Amnésie » de Damso aborde des thèmes lourds : la dépression, la solitude, le vide, et des pensées suicidaires. C'est un texte sombre, une manière d'en parler sans filtre.</p>
-  <p class="amnesie-stats"><strong>En France — Santé publique France (bilan 2023) :</strong> ~8 848 décès par suicide chaque année. Près de 3 sur 4 concernent les hommes (~6 600 hommes contre ~2 200 femmes). Les taux sont les plus élevés de <strong>45 à 64 ans</strong>, et après 65 ans chez les hommes.</p>
-  <p class="amnesie-help">Si tu traverses une passe difficile, tu n'es pas seul·e : <strong>3114</strong> (France, gratuit, 24h/24).</p>
-</div>
 
 <!-- CARD -->
 <main class="container" id="card">
@@ -798,13 +120,13 @@ body.amnesie-mode .username{position:relative;animation:glitch 3.2s infinite;}
     </div>
   </section>
 
-  <div class="tabs" role="tablist" aria-label="Catégories">
+  <div class="tabs" id="tabs" role="tablist" aria-label="Catégories">
     <button class="tab active" id="tab-reseaux" role="tab" aria-selected="true" aria-controls="panel-reseaux" data-tab="reseaux" type="button">Réseaux</button>
     <button class="tab" id="tab-dev" role="tab" aria-selected="false" aria-controls="panel-dev" data-tab="dev" type="button" tabindex="-1">Dev</button>
     <button class="tab" id="tab-pl" role="tab" aria-selected="false" aria-controls="panel-pl" data-tab="pl" type="button" tabindex="-1">Powerlifting</button>
   </div>
 
-  <div class="panels">
+  <div class="panels" id="panels">
     <section class="panel active" id="panel-reseaux" role="tabpanel" aria-labelledby="tab-reseaux" tabindex="0">
       <nav class="links fade" id="linksContainer" aria-label="Liens sociaux"></nav>
 
@@ -859,452 +181,89 @@ body.amnesie-mode .username{position:relative;animation:glitch 3.2s infinite;}
     </section>
   </div>
 
-  <button class="music-launch fade" id="musicLaunchBtn" type="button" style="display:none">
-    <i class="fas fa-play" id="launchIcon" aria-hidden="true"></i>
-    <span id="launchText">Lancer la musique</span>
-  </button>
+  <!-- CONTENU ENTREPRISE (visible uniquement en mode entreprise) -->
+  <div class="entreprise-content" id="entrepriseContent">
+    <div class="entreprise-tabs" role="tablist" aria-label="Catégories entreprise">
+      <button class="entreprise-tab active" id="ent-tab-projets" role="tab" aria-selected="true" aria-controls="ent-panel-projets" data-tab="projets" type="button">Projets</button>
+      <button class="entreprise-tab" id="ent-tab-partenariat" role="tab" aria-selected="false" aria-controls="ent-panel-partenariat" data-tab="partenariat" type="button" tabindex="-1">Partenariat</button>
+      <button class="entreprise-tab" id="ent-tab-contact" role="tab" aria-selected="false" aria-controls="ent-panel-contact" data-tab="contact" type="button" tabindex="-1">Contact</button>
+    </div>
 
-  <footer class="footer fade">fait par <a href="https://github.com/synnox" target="_blank" rel="noopener noreferrer">synnox</a></footer>
+    <div class="entreprise-panels">
+      <section class="entreprise-panel active" id="ent-panel-projets" role="tabpanel" aria-labelledby="ent-tab-projets" tabindex="0">
+        <div class="entreprise-section">
+          <div class="entreprise-title">À propos</div>
+          <div class="entreprise-desc">Développeur full-stack spécialisé en Python, C++ et web moderne. Powerlifter N1 qualifié pour les championnats de France sub-junior.</div>
+        </div>
+
+        <div class="entreprise-section">
+          <div class="entreprise-title">Projets Principaux</div>
+          <div class="links">
+            <a class="link" href="https://github.com/synnox/web-template" target="_blank" rel="noopener noreferrer" aria-label="Web Template">
+              <div class="link-icon i-github"><i class="fab fa-github" aria-hidden="true"></i></div>
+              <div class="link-info"><div class="link-title">Web Template</div><div class="link-sub">Template de site web moderne</div></div>
+              <div class="link-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
+            </a>
+            <a class="link" href="https://github.com/synnox/Sn-Hub" target="_blank" rel="noopener noreferrer" aria-label="Sn Hub">
+              <div class="link-icon i-github"><i class="fab fa-github" aria-hidden="true"></i></div>
+              <div class="link-info"><div class="link-title">Sn Hub</div><div class="link-sub">Plateforme communautaire</div></div>
+              <div class="link-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="entreprise-panel" id="ent-panel-partenariat" role="tabpanel" aria-labelledby="ent-tab-partenariat" tabindex="0">
+        <div class="entreprise-section">
+          <div class="entreprise-title">Partenariat</div>
+          <div class="entreprise-desc">Vous souhaitez collaborer ? Je suis ouvert aux partenariats professionnels. N'hésitez pas à me contacter pour discuter de vos projets.</div>
+          <div class="links" style="margin-top:12px">
+            <a class="link" href="https://mail.google.com/mail/?view=cm&fs=1&to=synnox.pro@gmail.com&su=Partenariat&body=Bonjour,%0A%0AJe souhaite vous proposer un partenariat.%0A%0ACordialement," target="_blank" rel="noopener noreferrer" aria-label="Gmail pour partenariat">
+              <div class="link-icon" style="background:rgba(234,67,53,.16);color:#ea4335"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+              <div class="link-info"><div class="link-title">Via Gmail</div><div class="link-sub">Ouvrir Gmail directement</div></div>
+              <div class="link-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="entreprise-panel" id="ent-panel-contact" role="tabpanel" aria-labelledby="ent-tab-contact" tabindex="0">
+        <div class="entreprise-section">
+          <div class="entreprise-title">Contact</div>
+          <div class="entreprise-desc">Une idée de projet, une collab ou juste envie de discuter ? Contactez-moi — réponse rapide.</div>
+          <div class="links">
+            <a class="link" href="https://mail.google.com/mail/?view=cm&fs=1&to=synnox.pro@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Gmail">
+              <div class="link-icon" style="background:rgba(234,67,53,.16);color:#ea4335"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+              <div class="link-info"><div class="link-title">Via Gmail</div><div class="link-sub">Ouvrir Gmail directement</div></div>
+              <div class="link-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>
+            </a>
+          </div>
+          <form class="guide" style="display:block;background:var(--surface2);border-radius:12px" id="entrepriseContactForm" action="https://formsubmit.co/synnox.pro@gmail.com" method="POST" onsubmit="event.preventDefault(); sendContactForm();">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="_subject" value="Nouveau message du site">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <input id="entCName" type="text" name="name" placeholder="Votre nom" required style="padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);font-family:inherit;font-size:13px">
+              <input id="entCSubject" type="text" name="subject" placeholder="Sujet" required style="padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);font-family:inherit;font-size:13px">
+              <textarea id="entCMsg" name="message" placeholder="Votre message…" required rows="4" style="padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);font-family:inherit;font-size:13px;resize:vertical"></textarea>
+              <button type="submit" style="padding:11px;border-radius:10px;border:none;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-weight:700;font-family:inherit;cursor:pointer">Envoyer</button>
+              <div id="entContactStatus" style="display:none;font-size:11px;color:var(--muted);text-align:center"></div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+  <footer class="footer fade">
+    <a href="https://github.com/synnox" target="_blank" rel="noopener noreferrer">synnox</a> ·
+    <a href="#" onclick="showLegalModal('privacy');return false;">Confidentialité</a> ·
+    <a href="#" onclick="showLegalModal('terms');return false;">Conditions</a> ·
+    <a href="#" onclick="showLegalModal('cookies');return false;">Cookies</a>
+  </footer>
 </main>
 
-<script>
-/* CONFIG */
-var CONFIG = {
-  userId:    '1400424463849226260',
-  username:  'Synnox',
-  avatarUrl: 'https://cdn.discordapp.com/avatars/1400424463849226260/4a4ff7f4949cd60778b7b0db12ccb11a.png',
-  bio:       'Best Serv &bull; Sn hub &bull; Best Data Hub',
-  links: [
-    { title:'Sn hub',  sub:'Mon serveur Discord', url:'https://discord.gg/344pkQeu2q',         icon:'fab fa-discord', color:'discord' },
-    { title:'YouTube', sub:'@synnoxtiktok',        url:'https://youtube.com/@synnoxtiktok',      icon:'fab fa-youtube', color:'youtube' },
-    { title:'TikTok',  sub:'@synnox.tiktok',       url:'https://www.tiktok.com/@synnox.tiktok', icon:'fab fa-tiktok',  color:'tiktok'  },
-    { title:'GitHub',  sub:'@synnox',              url:'https://github.com/synnox',             icon:'fab fa-github',  color:'github'  },
-  ]
-};
-
-var $ = id => document.getElementById(id);
-
-/* escape dynamic text coming from third-party APIs (XSS protection) */
-function esc(s){
-  return String(s==null?'':s).replace(/[&<>"']/g, function(c){
-    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
-  });
-}
-
-/* PROFILE (from Lanyard, single source of truth) */
-$('username').textContent = CONFIG.username;
-$('bio').innerHTML = CONFIG.bio;
-var av = $('avatar');
-av.src = CONFIG.avatarUrl;
-av.onerror = function(){ this.onerror=null; this.src='https://cdn.discordapp.com/embed/avatars/0.png'; };
-
-/* LINKS */
-CONFIG.links.forEach(function(l){
-  var a = document.createElement('a');
-  a.href=l.url; a.target='_blank'; a.rel='noopener noreferrer'; a.className='link';
-  a.setAttribute('aria-label', l.title+' — '+l.sub);
-  a.innerHTML=
-    '<div class="link-icon i-'+l.color+'"><i class="'+l.icon+'" aria-hidden="true"></i></div>'+
-    '<div class="link-info"><div class="link-title">'+esc(l.title)+'</div><div class="link-sub">'+esc(l.sub)+'</div></div>'+
-    '<div class="link-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></div>';
-  $('linksContainer').appendChild(a);
-});
-
-/* TABS */
-var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
-var panels = {
-  reseaux: $('panel-reseaux'),
-  dev:     $('panel-dev'),
-  pl:      $('panel-pl')
-};
-function activateTab(name){
-  tabs.forEach(function(t){
-    var sel = t.dataset.tab===name;
-    t.classList.toggle('active',sel);
-    t.setAttribute('aria-selected', sel?'true':'false');
-    t.tabIndex = sel?0:-1;
-  });
-  Object.keys(panels).forEach(function(k){
-    panels[k].classList.toggle('active', k===name);
-  });
-}
-tabs.forEach(function(t){
-  t.addEventListener('click', function(){ activateTab(t.dataset.tab); });
-  t.addEventListener('keydown', function(e){
-    var i = tabs.indexOf(t);
-    if(e.key==='ArrowRight'){ e.preventDefault(); tabs[(i+1)%tabs.length].focus(); }
-    if(e.key==='ArrowLeft'){ e.preventDefault(); tabs[(i-1+tabs.length)%tabs.length].focus(); }
-  });
-});
-activateTab('reseaux');
-
-/* GITHUB REPOS (Dev panel) */
-function loadRepos(){
-  var box = $('devRepos');
-  box.innerHTML='<div class="skel"><div class="skel-icon skel-pulse"></div><div class="skel-text skel-pulse"></div></div>';
-  fetch('https://api.github.com/users/synnox/repos?sort=updated&per_page=5')
-    .then(function(r){ if(!r.ok) throw 0; return r.json(); })
-    .then(function(repos){
-      if(!Array.isArray(repos) || !repos.length){ box.innerHTML=''; return; }
-      var langColors={JavaScript:'#f1e05a',Python:'#3572A5',C:'#555555','C++':'#f34b7d',HTML:'#e34c26',CSS:'#563d7c',TypeScript:'#3178c6',Java:'#b07219',PHP:'#4F5D95',Ruby:'#701516',Go:'#00ADD8',Rust:'#dea584',Shell:'#89e051'};
-      box.innerHTML = repos.map(function(rp){
-        var lang = rp.language
-          ? '<span class="repo-lang"><span class="repo-dot" style="background:'+(langColors[rp.language]||'#888')+'"></span>'+esc(rp.language)+'</span>'
-          : '';
-        var stars = rp.stargazers_count
-          ? '<span class="repo-stars"><i class="fas fa-star" aria-hidden="true"></i>'+rp.stargazers_count+'</span>'
-          : '';
-        return '<a class="repo" href="'+esc(rp.html_url)+'" target="_blank" rel="noopener noreferrer" aria-label="'+esc(rp.name)+'">'+
-          '<div class="repo-top"><span class="repo-name"><i class="fab fa-github" aria-hidden="true" style="color:#bbb"></i><span>'+esc(rp.name)+'</span></span>'+stars+'</div>'+
-          (rp.description?'<div class="repo-desc">'+esc(rp.description)+'</div>':'')+
-          lang+'</a>';
-      }).join('');
-    })
-    .catch(function(){ box.innerHTML=''; });
-}
-loadRepos();
-
-/* TILT */
-var card = $('card');
-var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-var tiltActive = !('ontouchstart' in window) && !reduceMotion;
-var tiltX=0, tiltY=0, rafTilt=null, targetX=0, targetY=0;
-
-document.addEventListener('mousemove', function(e){
-  if(!tiltActive) return;
-  var r = card.getBoundingClientRect();
-  var cx = r.left + r.width/2;
-  var cy = r.top  + r.height/2;
-  targetX = (e.clientY - cy) / (window.innerHeight/2) * -7;
-  targetY = (e.clientX - cx) / (window.innerWidth/2)  *  7;
-  if(!rafTilt) rafTilt = requestAnimationFrame(animateTilt);
-});
-
-function animateTilt(){
-  tiltX += (targetX - tiltX) * 0.1;
-  tiltY += (targetY - tiltY) * 0.1;
-  card.style.transform = 'perspective(900px) rotateX('+tiltX+'deg) rotateY('+tiltY+'deg) translateZ(6px)';
-  if(Math.abs(targetX-tiltX)>0.01 || Math.abs(targetY-tiltY)>0.01){
-    rafTilt = requestAnimationFrame(animateTilt);
-  } else {
-    rafTilt = null;
-  }
-}
-
-document.addEventListener('mouseleave', function(){
-  targetX=0; targetY=0;
-  if(!rafTilt) rafTilt = requestAnimationFrame(animateTilt);
-});
-
-/* MUSIC */
-var audio     = $('audioPlayer');
-var bgVideo   = $('bgVideo');
-var modal     = $('musicModal');
-var widget    = $('musicWidget');
-var playBtn   = $('musicPlayBtn');
-var musicIcon = $('musicIcon');
-var launchBtn = $('musicLaunchBtn');
-var launchIcon= $('launchIcon');
-var launchText= $('launchText');
-var volSlider = $('musicVolume');
-var bars      = $('musicBars');
-var fab       = $('musicFab');
-var rainFX    = $('rainFx');
-var mwInfo    = $('mwInfo');
-var changeBtn = $('musicChangeBtn');
-var isPlaying = false;
-var musicMode = null;
-var SAVE_KEY  = 'synnox_music_v1';
-var lastFocused = null;
-function setVolVisibility(show){ var v=$('mwVol'); if(v) v.style.display = show?'flex':'none'; }
-
-function saveChoice(m){ try{ localStorage.setItem(SAVE_KEY,m); }catch(e){} }
-function loadChoice(){ try{ return localStorage.getItem(SAVE_KEY); }catch(e){ return null; } }
-
-/* ── modal a11y ── */
-function modalKey(e){
-  if(e.key==='Escape'){ e.preventDefault(); chooseNone(); return; }
-  if(e.key==='Tab'){
-    var f=modal.querySelectorAll('button');
-    if(!f.length) return;
-    var first=f[0], last=f[f.length-1];
-    if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
-    else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
-  }
-}
-function openModal(){
-  lastFocused = document.activeElement;
-  modal.style.display='flex';
-  modal.style.opacity='1';
-  var f=modal.querySelectorAll('button');
-  if(f.length) f[0].focus();
-  document.addEventListener('keydown', modalKey);
-}
-function closeModal(){
-  modal.style.transition='opacity .25s';
-  modal.style.opacity='0';
-  document.removeEventListener('keydown', modalKey);
-  setTimeout(function(){ modal.style.display='none'; modal.style.opacity=''; }, 260);
-  if(lastFocused && lastFocused.focus) lastFocused.focus();
-}
-
-function syncUI(){
-  musicIcon.className  = isPlaying?'fas fa-pause':'fas fa-play';
-  launchIcon.className = isPlaying?'fas fa-pause':'fas fa-play';
-  launchBtn.classList.toggle('playing',isPlaying);
-  launchText.textContent = isPlaying?'Musique en cours':'Lancer la musique';
-  bars.classList.toggle('paused',!isPlaying);
-}
-function updateVolUI(v){
-  volSlider.style.background='linear-gradient(90deg,#5865f2 '+v+'%,rgba(255,255,255,.1) '+v+'%)';
-}
-volSlider.addEventListener('input',function(){
-  updateVolUI(this.value);
-  if(musicMode==='amnesie') audio.volume=this.value/100;
-  if(musicMode==='bg')      bgVideo.volume=this.value/100;
-});
-updateVolUI(30);
-
-function showWidget(title,artist){
-  $('widgetTitle').textContent  = title;
-  $('widgetArtist').textContent = artist;
-  widget.style.display='block';
-  launchBtn.style.display='flex';
-}
-function hideWidget(){
-  widget.style.display='none';
-  launchBtn.style.display='none';
-}
-
-function setupAmnesie(){
-  musicMode='amnesie';
-  document.body.classList.add('amnesie-mode');
-  rainFX.classList.add('active');
-  /* pas de vidéo catbox en Amnésie : fond noir + pluie + MP3 Damso */
-  bgVideo.style.display='none';
-  try{ bgVideo.pause(); }catch(e){}
-  audio.src='./assets/audio/vjvzjb.mp3';
-  audio.loop=true;
-  audio.volume=volSlider.value/100;
-  setVolVisibility(true);
-  showWidget('Amnésie','Damso');
-  var p=audio.play();
-  if(p) p.then(function(){isPlaying=true;syncUI();}).catch(function(){isPlaying=false;syncUI();});
-  else { isPlaying=true; syncUI(); }
-}
-function setupBg(autostart){
-  musicMode='bg';
-  document.body.classList.remove('amnesie-mode');
-  rainFX.classList.remove('active');
-  try{ audio.pause(); }catch(e){}
-  bgVideo.style.display='';
-  setVolVisibility(true);
-  showWidget('Arrière-plan','Son de la vidéo');
-  if(autostart){
-    bgVideo.removeAttribute('muted');
-    bgVideo.muted=false;
-    bgVideo.volume=volSlider.value/100;
-    var p=bgVideo.play();
-    if(p) p.then(function(){isPlaying=true;syncUI();}).catch(function(){isPlaying=false;syncUI();});
-    else {isPlaying=true;syncUI();}
-  } else {
-    bgVideo.muted=true;
-    isPlaying=false; syncUI();
-  }
-}
-function setNone(){
-  musicMode='none';
-  document.body.classList.remove('amnesie-mode');
-  rainFX.classList.remove('active');
-  try{ audio.pause(); }catch(e){}
-  bgVideo.style.display='';
-  bgVideo.muted=true;
-  setVolVisibility(false);
-  try{ bgVideo.play().catch(function(){}); }catch(e){}
-  hideWidget();
-  fab.style.display='flex';
-}
-
-function chooseAmnesie(){ saveChoice('yt'); closeModal(); setupAmnesie(); }
-function chooseBg(){ saveChoice('bg'); closeModal(); setupBg(true); }
-function chooseNone(){ saveChoice('none'); closeModal(); setNone(); }
-
-$('chooseDamso').addEventListener('click',chooseAmnesie);
-$('chooseBg').addEventListener('click',chooseBg);
-$('chooseNone').addEventListener('click',chooseNone);
-$('modalSkip').addEventListener('click',chooseNone);
-changeBtn.addEventListener('click',openModal);
-mwInfo.addEventListener('click',openModal);
-mwInfo.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openModal(); } });
-fab.addEventListener('click',openModal);
-
-/* info Amnésie (top-right popover) */
-var amnesieBtn   = $('amnesieInfoBtn');
-var amnesieBox   = $('amnesieInfoBox');
-var amnesieClose = $('amnesieInfoClose');
-function openAmnesieInfo(){ amnesieBox.hidden=false; amnesieBtn.setAttribute('aria-expanded','true'); }
-function closeAmnesieInfo(){ amnesieBox.hidden=true; amnesieBtn.setAttribute('aria-expanded','false'); }
-amnesieBtn.addEventListener('click',function(e){ e.stopPropagation(); document.activeElement!==amnesieClose && (amnesieBox.hidden?openAmnesieInfo():closeAmnesieInfo()); });
-amnesieClose.addEventListener('click',function(e){ e.stopPropagation(); closeAmnesieInfo(); });
-document.addEventListener('click',function(e){
-  if(!amnesieBox.hidden && !amnesieBox.contains(e.target) && e.target!==amnesieBtn) closeAmnesieInfo();
-});
-document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !amnesieBox.hidden) closeAmnesieInfo(); });
-
-function togglePlay(){
-  if(musicMode==='amnesie'){
-    if(isPlaying){ audio.pause(); isPlaying=false; }
-    else{ audio.play().catch(function(){}); isPlaying=true; }
-  } else if(musicMode==='bg'){
-    if(isPlaying){ bgVideo.pause(); isPlaying=false; }
-    else{ bgVideo.muted=false; bgVideo.volume=volSlider.value/100; bgVideo.play().catch(function(){}); isPlaying=true; }
-  }
-  syncUI();
-}
-playBtn.addEventListener('click',togglePlay);
-launchBtn.addEventListener('click',togglePlay);
-
-/* init music (respects saved choice & autoplay policies) */
-(function initMusic(){
-  var saved=loadChoice();
-  if(saved==='none'){ setNone(); }
-  else if(saved==='bg'){ setupBg(false); }
-  else if(saved==='damso' || saved==='yt' || saved==='amnesie'){ setupAmnesie(); }
-  else { openModal(); }
-})();
-
-/* save-data: skip heavy video bg */
-(function(){
-  var conn = navigator.connection||navigator.mozConnection||navigator.webkitConnection;
-  if(conn && conn.saveData){
-    bgVideo.removeAttribute('autoplay');
-    bgVideo.pause();
-    document.body.classList.add('no-video');
-  }
-})();
-
-/* LANYARD */
-var actBox    = $('activityContent');
-var statusDot = $('statusDot');
-var spTimer   = null;
-
-function fmt(ms){
-  if(ms<0)ms=0;
-  var s=Math.floor(ms/1000),m=Math.floor(s/60),h=Math.floor(m/60);
-  if(h>0)return h+'h '+(m%60)+'m';
-  if(m>0)return m+'m '+(s%60)+'s';
-  return s+'s';
-}
-
-function render(d){
-  var acts=d.activities||[], sp=d.spotify||null, status=d.discord_status||'offline';
-  statusDot.className='status-dot '+status;
-  statusDot.setAttribute('aria-label','Statut Discord : '+status);
-  if(spTimer){clearInterval(spTimer);spTimer=null;}
-
-  if(sp){
-    var s0=new Date(sp.timestamps.start).getTime(), e0=new Date(sp.timestamps.end).getTime();
-    var pct=Math.min((Date.now()-s0)/(e0-s0)*100,100);
-    var art = sp.album_art_url
-      ? '<img class="act-icon" src="'+esc(sp.album_art_url)+'" alt="" decoding="async">'
-      : '<div class="act-icon" style="display:flex;align-items:center;justify-content:center;font-size:20px;color:#1db954"><i class="fab fa-spotify" aria-hidden="true"></i></div>';
-    actBox.innerHTML=
-      '<div class="act-body">'+art+
-        '<div class="act-info">'+
-          '<div class="act-name">'+esc(sp.song||'Inconnu')+'</div>'+
-          '<div class="act-state">'+esc(sp.artist||'')+'</div>'+
-          '<div class="act-detail">Spotify &bull; '+esc(sp.album||'')+'</div>'+
-          '<div class="sp-bar"><div class="sp-progress"><div class="sp-fill" id="spFill" style="width:'+pct+'%"></div></div></div>'+
-        '</div></div>';
-    spTimer=setInterval(function(){
-      var p=Math.min((Date.now()-s0)/(e0-s0)*100,100);
-      var el=document.getElementById('spFill');
-      if(el)el.style.width=p+'%';
-    },1000);
-    return;
-  }
-
-  var game=acts.find(function(a){return a.type===0;}), custom=acts.find(function(a){return a.type===4;});
-
-  if(game){
-    var img=null;
-    try{
-      if(game.assets&&game.assets.large_image){
-        var si=game.assets.large_image;
-        if(si.indexOf('mp:external/')===0) img='https://media.discordapp.net/external/'+si.replace('mp:external/','');
-        else if(si.indexOf('spotify:')===0) img='https://i.scdn.co/image/'+si.replace('spotify:','');
-        else img='https://cdn.discordapp.com/app-assets/'+game.application_id+'/'+si+'.png';
-      }
-    }catch(e){}
-    var elapsed=game.timestamps&&game.timestamps.start?fmt(Date.now()-new Date(game.timestamps.start).getTime()):'';
-    actBox.innerHTML=
-      '<div class="act-body">'+
-        (img?'<img class="act-icon" src="'+esc(img)+'" alt="'+esc(game.name)+'" decoding="async" onerror="this.style.display=\'none\'">':
-             '<div class="act-icon" style="display:flex;align-items:center;justify-content:center;font-size:20px;color:#5865f2"><i class="fas fa-gamepad" aria-hidden="true"></i></div>')+
-        '<div class="act-info">'+
-          '<div class="act-name">'+esc(game.name)+'</div>'+
-          (game.details?'<div class="act-state">'+esc(game.details)+'</div>':'')+
-          (game.state?'<div class="act-detail">'+esc(game.state)+'</div>':'')+
-          (elapsed?'<div class="act-time">'+elapsed+'</div>':'')+
-        '</div></div>';
-    return;
-  }
-
-  if(custom&&custom.emoji){
-    var em=custom.emoji;
-    var eu=em.id?'https://cdn.discordapp.com/emojis/'+em.id+'.'+(em.animated?'gif':'png'):null;
-    actBox.innerHTML=
-      '<div class="act-body">'+
-        (eu?'<img class="act-icon" src="'+esc(eu)+'" alt="'+esc(em.name)+'" decoding="async" style="object-fit:contain;padding:10px;background:rgba(255,255,255,.04)">':
-            '<div class="act-icon" style="display:flex;align-items:center;justify-content:center;font-size:24px">'+esc(em.name)+'</div>')+
-        '<div class="act-info"><div class="act-name">'+esc(custom.state||'En ligne')+'</div><div class="act-state" style="color:#3a3a5a">Statut personnalisé</div></div>'+
-      '</div>';
-    return;
-  }
-
-  actBox.innerHTML='<div class="no-act"><i class="fas fa-circle" style="font-size:5px;color:#3ba55d" aria-hidden="true"></i><span>En ligne — Aucune activité</span></div>';
-}
-
-function showGuide(){
-  var g=$('guideBox'),c=$('guideContent');
-  g.style.display='block';
-  c.innerHTML='<strong>Pour voir ton activité Discord en direct :</strong><br><br>'+
-    '1. Rejoins le serveur <a href="https://discord.gg/lanyard" target="_blank" rel="noopener noreferrer"><strong>Lanyard</strong></a><br>'+
-    '2. Ton statut (jeu, Spotify…) apparaîtra ici en temps réel<br>'+
-    '3. Actualise la page après avoir rejoint';
-}
-
-function applyProfile(du){
-  if(!du) return;
-  $('username').textContent = du.global_name||du.username||CONFIG.username;
-  var disc = du.discriminator && du.discriminator!=='0' ? '#'+du.discriminator : '';
-  $('discriminator').textContent = disc;
-  if(du.avatar){
-    var ext = du.avatar.indexOf('a_')===0 ? 'gif' : 'png';
-    av.src = 'https://cdn.discordapp.com/avatars/'+du.id+'/'+du.avatar+'.'+ext;
-  } else {
-    av.src = CONFIG.avatarUrl;
-  }
-}
-
-function fetchLanyard(){
-  fetch('https://api.lanyard.rest/v1/users/'+CONFIG.userId)
-    .then(function(r){return r.json();})
-    .then(function(res){
-      if(res.success&&res.data){
-        if(res.data.discord_user) applyProfile(res.data.discord_user);
-        render(res.data);
-      } else {
-        actBox.innerHTML='<div class="no-act"><i class="fas fa-info-circle" style="color:#5865f2" aria-hidden="true"></i><span>ID non suivi par Lanyard</span></div>';
-        showGuide();
-      }
-    })
-    .catch(function(){
-      actBox.innerHTML='<div class="no-act"><i class="fas fa-exclamation-triangle" style="color:#faa61a" aria-hidden="true"></i><span>Impossible de charger l\'activité</span></div>';
-    });
-}
-fetchLanyard();
-setInterval(fetchLanyard,20000);
-</script>
+  <script src="./assets/js/app.js"></script>
 </body>
 </html>
